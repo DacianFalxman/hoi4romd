@@ -1,0 +1,250 @@
+focus_tree = {
+	id = md_romanian_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 20
+			original_tag = ROM
+		}
+	}
+	
+	default = no
+	
+	focus = {
+	id = ROM_industrial_focus
+	icon = t
+	x = 0
+	y = 0
+	
+	cost=10
+	ai_will_do = {
+	factor = 9
+	}
+	
+        	completion_reward = {
+         add_political_power=150
+		}
+
+	}
+	
+	
+	
+	focus = {
+	id = ROM_political_focus
+	icon = t
+	x = 6
+	y = 0
+	
+	cost=10
+	ai_will_do = {
+	factor = 9
+	}
+	
+        	completion_reward = {
+         add_political_power = 150
+		}
+
+	}
+	
+	
+	focus = {
+	id = ROM_internationalism
+	icon = tlc
+	x = 5
+	y = 1
+	prerequisite = {
+			focus = ROM_political_focus
+		}
+	
+	cost=10
+	ai_will_do = {
+	factor = 9
+	}
+	
+        	completion_reward = {
+         add_political_power = 150
+		}
+
+	}
+	
+	
+	focus = {
+	id = ROM_first
+	icon = tlc
+	x = 7
+	y = 1
+	
+	prerequisite = {
+			focus = ROM_political_focus
+		}
+	
+	cost=10
+	ai_will_do = {
+	factor = 9
+	}
+	
+        	completion_reward = {
+         add_political_power = 150
+		 add_national_unity = 0.05
+		}
+
+	}
+	
+	
+	focus = { 
+	 id = ROM_right_wing
+	 icon = fascism
+	 x = 10
+	 y = 1
+	 
+	 cost = 10
+	 prerequisite = 
+	 {
+	    focus = ROM_first
+	 }
+	completion_reward = 
+	{
+	        add_ideas = idea_focus_generic_path_of_order
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = fascist
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = monarchist
+				popularity = 0.05
+			}
+			add_popularity = 
+			{
+			   ideology = reactionary
+			   popularity = 0.05
+			}
+	}
+	
+	
+	}
+	
+	focus = {
+		id = ROM_anti_leftist_education
+		icon = anti_comintern_pact
+		x = 10
+		y = 3
+		cost = 1
+		
+		prerequisite = {
+			focus = ROM_right_wing
+		}
+		
+		completion_reward = {
+			decrease_communist_influence_by_2 = yes
+			decrease_social_liberal_influence_by_1 = yes
+			decrease_social_democrat_influence_by_3 = yes
+			decrease_progressive_influence_by_1 = yes
+			decrease_democratic_socialist_influence_by_1 = yes
+			add_ideas = FRA_anti_leftist_education_program
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+
+	
+	focus = {
+	id = ROM_moldova
+	icon = moldova
+	x = 7
+	y = 2
+	prerequisite = {
+			focus = ROM_political_focus
+		}
+	
+	cost=10
+	ai_will_do = {
+	factor = 9
+	}
+	
+         completion_reward = {
+		 add_state_core=78
+         add_political_power= 25
+		}
+	
+	
+	
+	
+	}
+
+	
+	focus = {
+		id = ROM_greater_romania
+		icon = focus_rom_preserve_romania
+		x = 7
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 9
+		}
+
+		prerequisite = {
+			focus = ROM_moldova
+		}
+		
+		
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_state_core=857
+			add_state_core=806
+			add_state_core=77
+			add_state_core=80
+		}
+	}
+
+	
+	focus = {
+	  id = ROM_new_dacia
+	  x = 7
+	  y = 4
+	  cost = 15
+	  
+	  ai_will_do = 
+	  {
+	   factor = 1
+	  }
+	
+	prerequisite = {
+	     focus = ROM_greater_romania
+	}
+		completion_reward = {
+		add_national_unity = 1
+		
+		}
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
